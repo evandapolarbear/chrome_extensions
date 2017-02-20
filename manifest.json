@@ -11,6 +11,6 @@
     }
   ],
   "chrome_url_overrides": {
-    "newtab": "newhomescreen.html"
+    "newtab": "new_home_page.html"
   }
 }

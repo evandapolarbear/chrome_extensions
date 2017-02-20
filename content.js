@@ -1,37 +1,12 @@
-console.log("upper fuck");
+// fetch("https://unsplash.it/200/300/?random").then(res => {
+//   console.log(res.status);
+//   console.log(res);
+// }).catch(err => {
+//   console.log(err);
+// })
 
-// chrome.tabs.onCreated.addListener(tab => {
-//   var options = {
-//     methods: "GET"
-//   }
-//
-//   console.log("fuckkkk");
-//
-//   fetch('https://jsonplaceholder.typicode.com').then(
-//     function(response) {
-//       var body = document.getElementById('body');
-//
-//       if(response.status !== 200) {
-//         body.setInnerHTML = "There was a problem, status code: "+ response.status;
-//       } else {
-//         response.json().then(data => {
-//           console.log(data);
-//         });
-//       }
-//     }
-//   )
-// });
-
-fetch('https://jsonplaceholder.typicode.com').then(
-    function(response) {
-      var body = document.getElementById('body');
-
-      if(response.status !== 200) {
-        body.setInnerHTML = "There was a problem, status code: "+ response.status;
-      } else {
-        response.json().then(data => {
-          console.log(data);
-      });
-    }
-  }
-)
+(function(){
+  // var url = "https://unsplash.it/g/700/?random"
+  var body = document.getElementById("body");
+  body.style.backgroundImage= 'url("https://unsplash.it/g/400/?random")'
+})()

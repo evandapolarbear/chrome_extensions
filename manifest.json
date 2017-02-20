@@ -8,15 +8,11 @@
     "persistent": false
   },
 
-  "content_scripts": [
-    {
-      "matches": ["chrome://newtab"],
-      "css": ["style.css"],
-      "js": ["content.js"]
-    }
+  "permissions": [
+    "storage"
   ],
 
   "chrome_url_overrides": {
-    "newtab": "new_home_.html"
+    "newtab": "new_home_page.html"
   }
 }

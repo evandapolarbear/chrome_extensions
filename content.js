@@ -1,16 +1,28 @@
 var addTaskButton = document.getElementById("add-task-button");
 var addTaskField = document.getElementById("new-task-field");
+var taskList = document.getElementById("task-list");
+
+
 
 
 addTaskButton.addEventListener("click", e => {
   e.preventDefault()
   var newTask = addTaskField.value;
   saveNewTask(newTask);
+  addTaskToUl(newTask);
 });
 
+function addTaskToUl(task){
+  var newLi = document.createElement("li");
+  var content = document.createTextNode(task);
+  newLi.appendChild(content);
+  taskList.appendChild(newLi);
+}
+
 function saveNewTask(task) {
-  var success = null;
   chrome.storage.local.get("taskList", store => {
+
+    console.log(store);
 
     if(store.taskList === undefined || !Array.isArray(store.taskList)){
       var toSave = store.taskList = [task];
@@ -21,13 +33,15 @@ function saveNewTask(task) {
 
     chrome.storage.local.set({"taskList": toSave});
   });
-
-  console.log("success flag:" + success);
-
-  if (success === true) {
-    return true;
-  } else {
-    return false;
-  }
-
 }
+
+function initialTaskAdd(){
+  chrome.storage.local.get("taskList", store => {
+    var tasks = store.taskList;
+    for (let i = 0; i < tasks.length; i++){
+      addTaskToUl(tasks[i])
+    }
+  });
+}
+
+initialTaskAdd();

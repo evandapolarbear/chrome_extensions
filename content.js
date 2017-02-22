@@ -9,6 +9,7 @@ var taskList = document.getElementById("task-list");
 addTaskButton.addEventListener("click", e => {
   e.preventDefault()
   var newTask = addTaskField.value;
+  addTaskField.value = '';
   saveNewTask(newTask);
   addTaskToUl(newTask);
 });

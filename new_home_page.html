@@ -7,6 +7,7 @@
       body{
         height: 100%
       }
+
       html {
         height: 100%;
         background: url(https://unsplash.it/g/1000/?random) no-repeat center center fixed;
@@ -17,22 +18,42 @@
         width: 35px;
         border-radius: 4px;
         background-color: #A3B86C;
+      }
+
+      button, li {
         margin-top: 10px;
+      }
+
+      li:hover, input:hover, button:hover {
+        cursor: pointer;
+      }
+
+      input {
+        width: 200px;
+        height: 30px;
+        font-size: 16px;
+        color: #1496BB;
+        font-weight: bolder;
+        background-color: rgba(0, 0, 0, 0.25);
       }
 
       ul {
         padding: 0;
         list-style-type: none;
+        background-color: rgba(0, 0, 0, 0.25);
+        text-align: right;
+        padding: 5px;
+        width: 200px;
       }
 
       .task-list {
         position: absolute;
         right: 90px;
         margin: auto auto;
-        min-height: 75%;
+        min-height: 85%;
         width: 200px;
-        font-weight: bolder;
 
+        font-weight: bolder;
         color: #1496BB;
         font-size: 19px;
 

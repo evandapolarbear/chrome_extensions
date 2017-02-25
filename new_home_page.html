@@ -9,7 +9,7 @@
       }
 
       ::-webkit-input-placeholder {
-        /*color: #A3B86C;*/
+        color: hotpink;
         font-size: 18px;
       }
 
@@ -17,12 +17,11 @@
         display: flex;
         justify-content: center;
         min-height: 80%;
-
       }
 
       html {
         height: 100%;
-        background: url(https://unsplash.it/1000/?random)  no-repeat center center fixed;
+        background: url(https://unsplash.it/g/1000/?random)  no-repeat center fixed;
         background-size: 100% 100%;
       }
 
@@ -76,10 +75,11 @@
       .task-list > ul {
         background-color: #A3B86C;
         border-radius: 3px;
-        padding: 10px 25px;
+        padding: 15px 25px 25px 25px;
       }
 
       .task-list > ul > li{
+        height: 30px;
         background-color: #1496BB;
         border-radius: 3px;
         color: whitesmoke;
@@ -123,7 +123,7 @@
           <input id='new-task-field' type="text" placeholder="New Notes or Task">
         </form>
 
-        <button id="add-task-button">Add</button>
+        <button type="submit" id="add-task-button">Add</button>
       </div>
     </div>
 

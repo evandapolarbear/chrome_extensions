@@ -3,16 +3,29 @@ var addTaskField = document.getElementById("new-task-field");
 var taskList = document.getElementById("task-list");
 
 
-
-
-
+document.addEventListener("keypress", e => {
+  var key = e.which || e.keyCode;
+  if (key === 13) {
+    e.preventDefault(); 
+    aggAddTask();
+  }
+})
 addTaskButton.addEventListener("click", e => {
-  e.preventDefault()
+  e.preventDefault();
+  aggAddTask();
+});
+
+function aggAddTask() {
   var newTask = addTaskField.value;
+
+  if (newTask === '') {
+    return
+  }
+
   addTaskField.value = '';
   saveNewTask(newTask);
   addTaskToUl(newTask);
-});
+}
 
 function addTaskToUl(task){
   var newLi = document.createElement("li");

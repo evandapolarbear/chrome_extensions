@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  color: hotpink;
+  font-size: 18px;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  min-height: 80%;
+}
+
+html {
+  height: 100%;
+  background: url(https://unsplash.it/g/1000/?random)  no-repeat center fixed;
+  background-size: 100% 100%;
+}
+
+button {
+  width: 200px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #1496BB;
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+button, li {
+  margin-top: 10px;
+}
+
+li:hover, input:hover, button:hover {
+  cursor: pointer;
+}
+
+input {
+  width: 350px;
+  height: 30px;
+  font-size: 16px;
+  color: #1496BB;
+  font-weight: bolder;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 3px #A3B86C solid;
+  text-align: center;
+}
+
+ul {
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+  padding: 5px;
+}
+
+.hidden{
+  display: none;
+}

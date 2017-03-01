@@ -1,0 +1,44 @@
+.task-list {
+  min-height: 85%;
+  width: 400px;
+
+  font-weight: bolder;
+  color: #1496BB;
+  font-size: 19px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.deleted {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+}
+
+.task-list > ul {
+  background-color: #A3B86C;
+  border-radius: 3px;
+  padding: 15px 25px 25px 25px;
+}
+
+.task-list > ul > li{
+  height: 30px;
+  background-color: #1496BB;
+  border-radius: 3px;
+  color: whitesmoke;
+  border: 1px whitesmoke solid;
+}
+
+#new-task-field:focus{
+  outline: none;
+  border-bottom: 3px hotpink solid;
+}

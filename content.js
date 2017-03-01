@@ -28,6 +28,9 @@ function aggAddTask() {
 }
 
 function addTaskToUl(task){
+
+  taskList.classList.remove("hidden");
+
   var newLi = document.createElement("li");
   var content = document.createTextNode(task);
   newLi.appendChild(content);

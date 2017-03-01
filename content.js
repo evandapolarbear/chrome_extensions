@@ -33,6 +33,7 @@ function addTaskToUl(task){
 
   var newLi = document.createElement("li");
   var content = document.createTextNode(task);
+
   newLi.appendChild(content);
 
   newLi.addEventListener("click", e => {

@@ -6,7 +6,7 @@ var taskList = document.getElementById("task-list");
 document.addEventListener("keypress", e => {
   var key = e.which || e.keyCode;
   if (key === 13) {
-    e.preventDefault(); 
+    e.preventDefault();
     aggAddTask();
   }
 })
@@ -83,16 +83,16 @@ function saveNewTask(task) {
   });
 }
 
-
-
-
-
-
 function initialTaskAdd(){
   chrome.storage.local.get("taskList", store => {
     var tasks = store.taskList;
-    for (let i = 0; i < tasks.length; i++){
-      addTaskToUl(tasks[i])
+
+    if(tasks.length > 0) {
+      for (let i = 0; i < tasks.length; i++){
+        addTaskToUl(tasks[i])
+      }
+    } else {
+      taskList.classList.add("hidden")
     }
   });
 }

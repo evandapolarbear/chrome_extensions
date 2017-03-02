@@ -1,0 +1,26 @@
+#url-ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#url-submit {
+  background-color: blue;
+  color: whitesmoke;
+  height: 50px;
+  width: 50px;
+}
+
+.add-url, .url-li, #url-input {
+  height: 100px;
+  width: 100px;
+}
+
+.url-a {
+  height: 100%;
+  width: 100%;
+}
+
+.url-list {
+  display: flex;
+  justify-content: flex-start;
+}

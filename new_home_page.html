@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>New Tabby</title>
-    <link rel="stylesheet" href="/assets/main.css">
-    <link rel="stylesheet" href="/assets/task_list.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/task_list.css">
 
   </head>
   <body>
@@ -19,8 +19,18 @@
 
         <button type="submit" id="add-task-button">Add</button>
       </div>
+      <div class="url-list">
+        <ul id="url-ul">
+        </ul>
+        <div class="add-url">
+          <input id="url-input" type="textarea" value="paste URL here">
+          <button id="url-submit">New URL</button>
+        </div>
+      </div>
+
     </div>
 
-    <script src="content.js"></script>
+    <script src="assets/js/tasks.js"></script>
+    <script src="assets/js/urls.js"></script>
   </body>
 </html>

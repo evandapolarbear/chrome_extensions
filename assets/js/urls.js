@@ -1,7 +1,7 @@
 var urlInput = document.getElementById("url-input");
 var urlSubmit = document.getElementById("url-submit");
 var urlUl = document.getElementById("url-ul");
-var displayUrl = document.getElementById("display-url");
+var displayUrl = document.getElementById("display-urls");
 
 urlSubmit.addEventListener("click", e => {
   e.preventDefault()
@@ -17,12 +17,13 @@ function aggUrlSave() {
 
   urlInput.value = '';
   saveNewUrl(newUrl);
-  addUrlToUl(newUrl);
+  // addUrlToUl(newUrl);
 }
 
 function saveNewUrl(url){
   chrome.storage.local.get("urls", store => {
-    if(store.url === undefined || !Array.isArray(store.urls)){
+
+    if(store.urls === undefined || !Array.isArray(store.urls)){
       var toSave = store.urls = [url];
     } else {
       var toSave = store.urls
@@ -51,7 +52,8 @@ function initialUrlAdd() {
   chrome.storage.local.get("urls", store => {
     var urls = store.urls;
 
-
+    console.log(urls);
+    console.log(displayUrl);
     if (urls !== undefined && urls.length > 0){
       for (let i = 0; i < urls.length; i++){
         displayUrl.classList.remove("hidden")

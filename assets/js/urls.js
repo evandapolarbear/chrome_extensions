@@ -1,8 +1,9 @@
 var urlInput = document.getElementById("url-input");
 var urlSubmit = document.getElementById("url-submit");
 var urlUl = document.getElementById("url-ul");
+var displayUrl = document.getElementById("display-url");
 
-urlSubmit.addEventListener("click", e = {
+urlSubmit.addEventListener("click", e => {
   e.preventDefault()
   aggUrlSave();
 });
@@ -47,18 +48,17 @@ function addUrlToUl(url){
 }
 
 function initialUrlAdd() {
-  console.log("fuckkkkkkkk");
   chrome.storage.local.get("urls", store => {
     var urls = store.urls;
 
-    if (urls.length > 0 ){
-      for (let i = 0; i urls.length; i++){
+
+    if (urls !== undefined && urls.length > 0){
+      for (let i = 0; i < urls.length; i++){
+        displayUrl.classList.remove("hidden")
         addUrlToUl(urls[i])
       }
-    } else {
-      urlUl.classList.add("hidden");
     }
-  })
+  });
 }
 
 initialUrlAdd();

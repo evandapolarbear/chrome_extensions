@@ -17,7 +17,7 @@ function aggUrlSave() {
 
   urlInput.value = '';
   saveNewUrl(newUrl);
-  // addUrlToUl(newUrl);
+  addUrlToUl(newUrl);
 }
 
 function saveNewUrl(url){
@@ -35,25 +35,54 @@ function saveNewUrl(url){
 }
 
 function addUrlToUl(url){
+  displayUrl.classList.remove("hidden");
+
+  var deleteButton = createUrlDeleteButton(url)
+
   var newLi = document.createElement("li");
-  newLi.classList.add("url-li");
+    newLi.classList.add("url-li");
 
   var inner = document.createElement("a");
-  inner.setAttribute("href", url);
-  inner.classList.add("url-a");
+    inner.setAttribute("href", url);
+    inner.classList.add("url-a");
 
   var content = document.createTextNode(url)
-  inner.appendChild(content);
 
+  inner.appendChild(content);
+  newLi.appendChild(deleteButton)
   newLi.appendChild(inner);
+  urlUl.appendChild(newLi);
+}
+
+function createUrlDeleteButton (url){
+  var deleteButton = document.createElement("div");
+    deleteButton.classList.add("url-delete");
+
+  deleteButton.addEventListener("click", e => {
+    e.preventDefault();
+
+    chrome.storage.local.get("urls", store => {
+      var urlList = store.urls;
+      var idx = urlList.indexOf(url);
+
+      var left = urlList.slice(0, idx);
+      var right = urlList.slice(idx+1);
+
+      var toSave = left.concat(right);
+
+      chrome.storage.local.set({"urls": toSave}, initialUrlAdd)
+    });
+  });
+
+  return deleteButton;
 }
 
 function initialUrlAdd() {
+  urlUl.innerHTML = null;
+  
   chrome.storage.local.get("urls", store => {
     var urls = store.urls;
 
-    console.log(urls);
-    console.log(displayUrl);
     if (urls !== undefined && urls.length > 0){
       for (let i = 0; i < urls.length; i++){
         displayUrl.classList.remove("hidden")

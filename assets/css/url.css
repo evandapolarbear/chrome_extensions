@@ -19,6 +19,13 @@
   background-color: yellow;
 }
 
+.url-delete {
+  border: 2px white solid;
+  background-color: red;
+  height: 20px;
+  width: 20px;
+}
+
 .url-a {
   height: 100%;
   width: 100%;

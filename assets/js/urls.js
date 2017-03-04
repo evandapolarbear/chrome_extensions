@@ -57,6 +57,7 @@ function addUrlToUl(url){
 function createUrlDeleteButton (url){
   var deleteButton = document.createElement("div");
     deleteButton.classList.add("url-delete");
+    deleteButton.appendChild(document.createTextNode("X"))
 
   deleteButton.addEventListener("click", e => {
     e.preventDefault();
@@ -79,7 +80,7 @@ function createUrlDeleteButton (url){
 
 function initialUrlAdd() {
   urlUl.innerHTML = null;
-  
+
   chrome.storage.local.get("urls", store => {
     var urls = store.urls;
 

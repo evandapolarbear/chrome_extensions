@@ -30,6 +30,10 @@
   padding: 15px 25px 25px 25px;
 }
 
+#add-task-button {
+  margin-top: 10px;
+}
+
 .task-list > ul > li{
   height: 30px;
   background-color: #1496BB;
@@ -41,4 +45,8 @@
 #new-task-field:focus{
   outline: none;
   border-bottom: 3px hotpink solid;
+}
+
+#task-list > * + *{
+  margin-top: 10px;
 }

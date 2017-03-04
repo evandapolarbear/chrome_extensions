@@ -28,10 +28,6 @@ button {
   color: whitesmoke;
 }
 
-button, li {
-  margin-top: 10px;
-}
-
 li:hover, input:hover, button:hover {
   cursor: pointer;
 }

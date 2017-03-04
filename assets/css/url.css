@@ -20,7 +20,17 @@
 }
 
 .url-li{
-  background-color: yellow;
+  background-color: #1496BB;
+  color: whitesmoke;
+  border-radius: 5px;
+  border-top: lightgray 2px solid;
+  border-left: lightgray 2px solid;
+  border-bottom: gray 2px solid;
+  border-right: gray 2px solid;
+}
+
+.url-li:hover {
+  cursor: pointer
 }
 
 .url-delete {
@@ -30,18 +40,11 @@
   width: 25px;
   border-radius: 50%;
   position: relative;
-  top: -12.5px;
+  top: 12.5px;
   right: -87.5px;
   font-size: 17px;
   font-weight: bolder;
 }
-
-
-.url-a {
-  height: 100%;
-  width: 100%;
-}
-
 
 .url-list {
   display: flex;

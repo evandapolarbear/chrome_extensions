@@ -40,17 +40,19 @@ function addUrlToUl(url){
   var deleteButton = createUrlDeleteButton(url)
 
   var newLi = document.createElement("li");
-    newLi.classList.add("url-li");
 
-  var inner = document.createElement("a");
-    inner.setAttribute("href", url);
-    inner.classList.add("url-a");
+  var outer = document.createElement("a");
+    outer.setAttribute("href", url);
+
+  var inner = document.createElement("div")
+    inner.classList.add("url-li");
 
   var content = document.createTextNode(url)
 
   inner.appendChild(content);
-  newLi.appendChild(deleteButton)
-  newLi.appendChild(inner);
+  newLi.appendChild(deleteButton);
+  outer.appendChild(inner);
+  newLi.appendChild(outer)
   urlUl.appendChild(newLi);
 }
 

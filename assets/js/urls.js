@@ -38,22 +38,29 @@ function addUrlToUl(url){
   displayUrl.classList.remove("hidden");
 
   var deleteButton = createUrlDeleteButton(url)
-
   var newLi = document.createElement("li");
-
   var outer = document.createElement("a");
     outer.setAttribute("href", url);
-
   var inner = document.createElement("div")
     inner.classList.add("url-li");
-
-  var content = document.createTextNode(url)
+  var content = document.createTextNode(titleMaker(url))
 
   inner.appendChild(content);
   newLi.appendChild(deleteButton);
   outer.appendChild(inner);
   newLi.appendChild(outer)
   urlUl.appendChild(newLi);
+}
+
+function titleMaker(url){
+  if (url.indexOf("www") !== -1){
+    var firstIdx = url.indexOf(".") + 1;
+  } else {
+    var firstIdx = url.indexOf("/") + 2;
+  }
+
+  var secondIdx = url.slice(firstIdx).indexOf(".") + firstIdx;
+  return url.slice(firstIdx, secondIdx);
 }
 
 function createUrlDeleteButton (url){

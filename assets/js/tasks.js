@@ -3,11 +3,21 @@ var addTaskField = document.getElementById("new-task-field");
 var taskList = document.getElementById("task-list");
 
 
+addTaskField.addEventListener('input', () => {
+  addTaskButton.classList.remove("hidden");
+
+  if (addTaskField.value === ''){
+    addTaskButton.classList.add("hidden");
+  }
+});
+
 document.addEventListener("keypress", e => {
   var key = e.which || e.keyCode;
   if (key === 13) {
     e.preventDefault();
     aggAddTask();
+    //move this to its own File?
+    //Add Url submit.
   }
 })
 addTaskButton.addEventListener("click", e => {

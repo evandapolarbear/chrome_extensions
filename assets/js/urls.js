@@ -8,7 +8,6 @@ var addUlrInput = document.getElementsByClassName("add-url").item(0)
 openInput.addEventListener("click", e => {
   e.preventDefault();
 
-  console.log(addUlrInput);
   openInput.classList.add("hidden");
   addUlrInput.classList.remove("hidden");
 })
@@ -25,12 +24,14 @@ function aggUrlSave() {
     return
   }
 
-  openInput.classList.remove("hidden");
-  addUrlInput.classList.add("hidden");
 
   urlInput.value = '';
   saveNewUrl(newUrl);
   addUrlToUl(newUrl);
+
+  
+  addUlrInput.classList.add("hidden");
+  openInput.classList.remove("hidden");
 }
 
 function saveNewUrl(url){

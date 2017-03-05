@@ -2,6 +2,16 @@ var urlInput = document.getElementById("url-input");
 var urlSubmit = document.getElementById("url-submit");
 var urlUl = document.getElementById("url-ul");
 var displayUrl = document.getElementById("display-urls");
+var openInput = document.getElementById("open-url-input");
+var addUlrInput = document.getElementsByClassName("add-url").item(0)
+
+openInput.addEventListener("click", e => {
+  e.preventDefault();
+
+  console.log(addUlrInput);
+  openInput.classList.add("hidden");
+  addUlrInput.classList.remove("hidden");
+})
 
 urlSubmit.addEventListener("click", e => {
   e.preventDefault()
@@ -14,6 +24,9 @@ function aggUrlSave() {
   if (newUrl === ''){
     return
   }
+
+  openInput.classList.remove("hidden");
+  addUrlInput.classList.add("hidden");
 
   urlInput.value = '';
   saveNewUrl(newUrl);

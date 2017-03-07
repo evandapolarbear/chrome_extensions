@@ -52,3 +52,33 @@
 #task-list > * + *{
   margin-top: 10px;
 }
+
+#see-more-tasks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+#see-more-tasks:hover {
+  cursor: pointer;
+}
+
+.more-circle, .active-more-circle {
+  border-radius: 50%;
+  border: whitesmoke 1px solid;
+}
+
+.active-more-circle {
+  width: 22px;
+  height: 22px;
+  background-color: hotpink;
+}
+
+.more-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #1496BB;
+}

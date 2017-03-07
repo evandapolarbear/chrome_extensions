@@ -68,16 +68,20 @@
 
 .more-circle, .active-more-circle {
   border-radius: 50%;
-  border: whitesmoke 1px solid;
+  transition: background-color .065s ease,
+              height .065s ease,
+              width .065s ease;
 }
 
 .active-more-circle {
   width: 22px;
   height: 22px;
   background-color: whitesmoke;
+  border: #1496BB 1px solid;
 }
 
 .more-circle {
+  border: whitesmoke 1px solid;
   width: 20px;
   height: 20px;
   background-color: #1496BB;

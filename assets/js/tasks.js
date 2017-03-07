@@ -12,13 +12,13 @@ moreTasks.addEventListener("click", e => {
   chrome.storage.local.get("taskList", obj => {
     var store = obj.taskList
     var currIdx = store.indexOf(text);
-    var newIdx = currIdx + 7;
+    var newIdx = currIdx + 6;
 
     if (newIdx > store.length - 1 ) {
       newIdx = 0;
     }
 
-    var toShow = store.slice(newIdx, newIdx+7)
+    var toShow = store.slice(newIdx, newIdx + 6)
 
     while(taskLis.length > 0){
       taskList.removeChild(taskLis[0]);
@@ -64,7 +64,7 @@ function aggAddTask() {
 }
 
 function addTaskToUl(task){
-  if(taskLis.length > 6) {
+  if(taskLis.length > 5) {
     moreTasks.classList.remove("hidden");
     return;
   }

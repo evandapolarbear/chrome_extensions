@@ -1,7 +1,8 @@
-var moreCircleOne = document.getElementById("more-circle-1")
-var moreCircleTwo = document.getElementById("more-circle-2")
-var moreCircleThree = document.getElementById("more-circle-3")
-var moreCircleFour = document.getElementById("more-circle-4")
+var moreCircleOne = document.getElementById("more-circle-1");
+var moreCircleTwo = document.getElementById("more-circle-2");
+var moreCircleThree = document.getElementById("more-circle-3");
+var moreCircleFour = document.getElementById("more-circle-4");
+var seeMoreTaskDiv = document.getElementById("see-more-tasks");
 
 setInterval(() => {
   moreCircleOne.classList.add("active-more-circle");
@@ -36,4 +37,4 @@ setInterval(() => {
     moreCircleFour.classList.remove("active-more-circle");
   }, 600);
 
-}, 4000);
+}, 3500);

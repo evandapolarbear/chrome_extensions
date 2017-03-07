@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .deleted {
@@ -18,6 +19,9 @@
 }
 
 .content {
+  position: relative;
+  bottom: 20px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +31,7 @@
 .task-list > ul {
   background-color: #A3B86C;
   border-radius: 3px;
-  padding: 15px 25px 25px 25px;
+  padding: 10px 10px 10px 10px;
 }
 
 #add-task-button {
@@ -35,16 +39,14 @@
 }
 
 .task-list > ul > li{
-  height: 30px;
+  padding: 5px;
   background-color: #1496BB;
   border-radius: 3px;
   color: whitesmoke;
-  border: 1px whitesmoke solid;
-}
-
-#new-task-field:focus{
-  outline: none;
-  border-bottom: 3px hotpink solid;
+  border-top: lightgray 2px solid;
+  border-left: lightgray 2px solid;
+  border-bottom: gray 2px solid;
+  border-right: gray 2px solid;
 }
 
 #task-list > * + *{

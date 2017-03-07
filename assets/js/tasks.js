@@ -1,13 +1,20 @@
 var addTaskButton = document.getElementById("add-task-button");
 var addTaskField = document.getElementById("new-task-field");
 var taskList = document.getElementById("task-list");
+var moreTasks = document.getElementById("see-more-tasks")
 
+
+moreTasks.addEventListener("click", e => {
+  e.preventDefault();
+
+  
+})
 
 addTaskField.addEventListener('input', () => {
-  addTaskButton.classList.remove("hidden");
+  addTaskButton.classList.remove("invisible");
 
   if (addTaskField.value === ''){
-    addTaskButton.classList.add("hidden");
+    addTaskButton.classList.add("invisible");
   }
 });
 
@@ -16,6 +23,7 @@ document.addEventListener("keypress", e => {
   if (key === 13) {
     e.preventDefault();
     aggAddTask();
+    aggUrlSave();
     //move this to its own File?
     //Add Url submit.
   }
@@ -52,7 +60,9 @@ function addTaskToUl(task){
     toggleDelete(newLi)
   });
 
-  taskList.appendChild(newLi);
+  console.log(moreTasks);
+
+  taskList.insertBefore(newLi, moreTasks);
 }
 
 function toggleDelete(li){

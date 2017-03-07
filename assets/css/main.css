@@ -14,7 +14,8 @@ a {
 body{
   display: flex;
   justify-content: center;
-  min-height: 80%;
+  min-height: 100%;
+  align-items: flex-end;
 }
 
 html {
@@ -42,10 +43,15 @@ input {
   font-size: 16px;
   color: #1496BB;
   font-weight: bolder;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(225, 229, 237, .8);
   border: none;
-  border-bottom: 3px #A3B86C solid;
   text-align: center;
+  border-radius: 3px;
+}
+
+input:focus{
+  outline: none;
+  border-bottom: 3px hotpink solid;
 }
 
 ul {
@@ -57,4 +63,8 @@ ul {
 
 .hidden{
   display: none;
+}
+
+.invisible {
+  visibility: hidden;
 }

@@ -1,13 +1,33 @@
 var addTaskButton = document.getElementById("add-task-button");
 var addTaskField = document.getElementById("new-task-field");
 var taskList = document.getElementById("task-list");
-var moreTasks = document.getElementById("see-more-tasks")
+var moreTasks = document.getElementById("see-more-tasks");
+var taskLis = document.getElementsByClassName("task-li");
 
 
 moreTasks.addEventListener("click", e => {
   e.preventDefault();
+  var text = taskList.firstChild.nextElementSibling.innerHTML;
 
-  
+  chrome.storage.local.get("taskList", obj => {
+    var store = obj.taskList
+    var currIdx = store.indexOf(text);
+    var newIdx = currIdx + 7;
+
+    if (newIdx > store.length - 1 ) {
+      newIdx = 0;
+    }
+
+    var toShow = store.slice(newIdx, newIdx+7)
+
+    while(taskLis.length > 0){
+      taskList.removeChild(taskLis[0]);
+    }
+
+    toShow.forEach(task => {
+      addTaskToUl(task);
+    });
+  });
 })
 
 addTaskField.addEventListener('input', () => {
@@ -24,8 +44,6 @@ document.addEventListener("keypress", e => {
     e.preventDefault();
     aggAddTask();
     aggUrlSave();
-    //move this to its own File?
-    //Add Url submit.
   }
 })
 addTaskButton.addEventListener("click", e => {
@@ -46,10 +64,15 @@ function aggAddTask() {
 }
 
 function addTaskToUl(task){
+  if(taskLis.length > 6) {
+    moreTasks.classList.remove("hidden");
+    return;
+  }
 
   taskList.classList.remove("hidden");
 
   var newLi = document.createElement("li");
+    newLi.classList.add("task-li");
   var content = document.createTextNode(task);
 
   newLi.appendChild(content);
@@ -59,8 +82,6 @@ function addTaskToUl(task){
 
     toggleDelete(newLi)
   });
-
-  console.log(moreTasks);
 
   taskList.insertBefore(newLi, moreTasks);
 }
@@ -78,7 +99,6 @@ function toggleDelete(li){
   }
 }
 
-
 function removeFromStorage(task) {
   chrome.storage.local.get("taskList", store => {
     var taskList = store.taskList;
@@ -94,6 +114,7 @@ function removeFromStorage(task) {
 }
 
 function saveNewTask(task) {
+  totalNumTasks = 0;
   chrome.storage.local.get("taskList", store => {
 
     if(store.taskList === undefined || !Array.isArray(store.taskList)){
@@ -103,8 +124,10 @@ function saveNewTask(task) {
       toSave.push(task)
     }
 
+    totalNumTasks = toSave.length;
     chrome.storage.local.set({"taskList": toSave});
   });
+  return totalNumTasks;
 }
 
 function initialTaskAdd(){

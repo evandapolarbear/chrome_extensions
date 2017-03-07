@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80px;
+  width: 100px;
   height: 25px;
   margin: 10px auto;
 }
@@ -74,7 +74,7 @@
 .active-more-circle {
   width: 22px;
   height: 22px;
-  background-color: hotpink;
+  background-color: whitesmoke;
 }
 
 .more-circle {

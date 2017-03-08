@@ -64,7 +64,7 @@ function aggAddTask() {
 }
 
 function addTaskToUl(task){
-  if(taskLis.length > 5) {
+  if(taskLis.length > 6) {
     moreTasks.classList.remove("hidden");
     return;
   }

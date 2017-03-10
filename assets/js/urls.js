@@ -29,7 +29,7 @@ function aggUrlSave() {
   saveNewUrl(newUrl);
   addUrlToUl(newUrl);
 
-  
+
   addUlrInput.classList.add("hidden");
   openInput.classList.remove("hidden");
 }
@@ -74,7 +74,9 @@ function titleMaker(url){
   }
 
   var secondIdx = url.slice(firstIdx).indexOf(".") + firstIdx;
-  return url.slice(firstIdx, secondIdx);
+  var title = url.slice(firstIdx, secondIdx)
+
+  return title.slice(0,10);
 }
 
 function createUrlDeleteButton (url){

@@ -23,6 +23,8 @@ function needsHackyFix(){
   var height = w.innerHeight||e.clientHeight;
   var noKids = urlUl.children.length === 0;
 
+  console.log(urlUl.children);
+
   if (width > 750 && height > 610 && noKids){
     return true
   } else {
@@ -50,6 +52,9 @@ function aggUrlSave() {
 
   addUlrInput.classList.add("hidden");
   openInput.classList.remove("hidden");
+
+  var item = document.getElementsByClassName("add-url").item(0);
+  item.classList.remove("hacky-fix")
 }
 
 function saveNewUrl(url){

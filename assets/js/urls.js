@@ -8,9 +8,27 @@ var addUlrInput = document.getElementsByClassName("add-url").item(0)
 openInput.addEventListener("click", e => {
   e.preventDefault();
 
+  if (needsHackyFix()){
+    var item = document.getElementsByClassName("add-url").item(0);
+    item.classList.add("hacky-fix")
+  }
+
   openInput.classList.add("hidden");
   addUlrInput.classList.remove("hidden");
-})
+});
+
+function needsHackyFix(){
+  var w=window, d=document, e=d.documentElement
+  var width = w.innerWidth||e.clientWidth;
+  var height = w.innerHeight||e.clientHeight;
+  var noKids = urlUl.children.length === 0;
+
+  if (width > 750 && height > 610 && noKids){
+    return true
+  } else {
+    return false;
+  }
+}
 
 urlSubmit.addEventListener("click", e => {
   e.preventDefault()

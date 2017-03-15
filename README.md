@@ -15,5 +15,5 @@ Using the site Unspash.it I make a request for a random image.  Then using css I
 
 ## Screen Shots
 ![image](./assets/docs/screen_shot_1.jpeg)
-![image](./assets/docs/screen_shot_2.jpeg)
-![image](./assets/docs/screen_shot_3.jpeg)
+![image](./assets/docs/screen_shot2.jpeg)
+![image](./assets/docs/screen_shot3.jpeg)

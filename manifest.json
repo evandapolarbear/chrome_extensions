@@ -9,5 +9,10 @@
 
   "chrome_url_overrides": {
     "newtab": "new_home_page.html"
+  },
+
+  "browser_action": {
+        "default_title": "Task Tab",
+        "default_popup": "popup.html"
   }
 }

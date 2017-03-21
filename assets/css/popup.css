@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+
+.pop-li {
+  list-style-type: none;
+  background-color: #1496BB;
+  color: white;
+  padding: 3px;
+
+  border-radius: 3px;
+  border-top: white 1px solid;
+  border-left: white 1px solid;
+  border-right: grey 1px solid;
+  border-bottom: grey 1px solid;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pop-li:hover {
+  cursor: pointer;
+}
+
+
+#popup {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  width: 200px;
+  height: 100%;
+  margin: 0;
+  padding: 5px;
+  list-style-type: none;
+  background-color: #A3B86C;
+}
+
+#popup > * + * {
+  margin-top: 4px;
+}

@@ -23,6 +23,10 @@ body {
   cursor: pointer;
 }
 
+.deleted {
+  text-decoration: line-through;
+  opacity: .5;
+}
 
 #popup {
   display: flex;
@@ -39,4 +43,8 @@ body {
 
 #popup > * + * {
   margin-top: 4px;
+}
+
+.hidden{
+  display: none;
 }

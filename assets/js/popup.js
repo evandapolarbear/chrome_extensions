@@ -9,7 +9,6 @@ function taskAdd(){
         addToUl(t)
       })
     }
-
   });
 }
 
@@ -23,14 +22,25 @@ function addToUl(task){
   newLi.addEventListener("click", e => {
     e.preventDefault();
 
-    deleteItem()
+    deleteItem(task)
+    newLi.classList.add("deleted")
   });
 
   popUl.appendChild(newLi)
 }
 
 function deleteItem(task) {
-  console.log("Yaaaaa");
+  chrome.storage.local.get("taskList", store => {
+    var taskList = store.taskList;
+    var idx = taskList.indexOf(task);
+
+    var left = taskList.slice(0, idx);
+    var right = taskList.slice(idx + 1);
+
+    var toSave = left.concat(right);
+
+    chrome.storage.local.set({taskList:toSave});
+  });
 }
 
 taskAdd()
